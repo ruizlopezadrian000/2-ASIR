@@ -1,0 +1,10 @@
+nombre = input("¿Cómo te llamas? ")
+ciclo = input("¿Qué ciclo estudias? ")
+aficion = input("¿Cuál es tu afición? ")
+
+print()
+print("Hola, me llamo", nombre + ".")
+print("Estudio el ciclo de", ciclo + ".")
+print("Mi afición es", aficion + ".")
+print()
+print("Hola, me llamo", nombre, "y estudio", ciclo + ". Mi afición es", aficion + ".")
