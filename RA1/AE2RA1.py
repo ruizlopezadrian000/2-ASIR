@@ -17,7 +17,7 @@ importe_final = importe_inicial - descuento
 cumple_ayuda = nota_media >= 7 and distancia >= 20
 
 print()
-print("RESUMEN DE MATRÍCULA")
+print("Resumen de la matrícula")
 print()
 print("Alumno:", nombre)
 print("Edad:", edad, "años")
