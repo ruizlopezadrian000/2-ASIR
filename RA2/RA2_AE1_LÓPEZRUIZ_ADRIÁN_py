@@ -1,5 +1,3 @@
-
-# Pedir el número de equipos y validarlo
 while True:
     equipos_previstos = int(input("¿Cuántos equipos vas a revisar (1-30)? "))
 
@@ -15,7 +13,6 @@ leves = 0
 graves = 0
 cancelado = False
 
-# Registrar las incidencias
 for equipo in range(1, equipos_previstos + 1):
     while True:
         estado = int(input(
@@ -48,7 +45,6 @@ for equipo in range(1, equipos_previstos + 1):
     if cancelado:
         break
 
-# Calcular los resultados
 registrados = len(estados)
 total_incidencias = leves + graves
 
