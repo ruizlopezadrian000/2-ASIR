@@ -1,0 +1,76 @@
+
+# Pedir el número de equipos y validarlo
+while True:
+    equipos_previstos = int(input("¿Cuántos equipos vas a revisar (1-30)? "))
+
+    if 1 <= equipos_previstos <= 30:
+        break
+    else:
+        print("Introduce un número entre 1 y 30.")
+
+estados = []
+
+correctos = 0
+leves = 0
+graves = 0
+cancelado = False
+
+# Registrar las incidencias
+for equipo in range(1, equipos_previstos + 1):
+    while True:
+        estado = int(input(
+            f"Estado del equipo {equipo} (0, 1, 2 o 9): "
+        ))
+
+        if estado == 9:
+            cancelado = True
+            break
+
+        elif estado == 0:
+            estados.append(estado)
+            correctos += 1
+            break
+
+        elif estado == 1:
+            estados.append(estado)
+            leves += 1
+            break
+
+        elif estado == 2:
+            estados.append(estado)
+            graves += 1
+            break
+
+        else:
+            print("Código no válido. Inténtalo otra vez.")
+            continue
+
+    if cancelado:
+        break
+
+# Calcular los resultados
+registrados = len(estados)
+total_incidencias = leves + graves
+
+print("INFORME DE INCIDENCIAS")
+print("Equipos previstos:", equipos_previstos)
+print("Equipos registrados:", registrados)
+print("Estados registrados:", estados)
+print("Correctos:", correctos)
+print("Incidencias leves:", leves)
+print("Incidencias graves:", graves)
+print("Total con incidencia:", total_incidencias)
+
+if registrados == 0:
+    print("Porcentaje con incidencia: 0.0 %")
+    print("Situación del aula: SIN DATOS")
+else:
+    porcentaje = total_incidencias / registrados * 100
+    print(f"Porcentaje con incidencia: {porcentaje:.1f} %")
+
+    if porcentaje < 25:
+        print("Situación del aula: NORMAL")
+    elif porcentaje <= 50:
+        print("Situación del aula: ATENCIÓN")
+    else:
+        print("Situación del aula: CRÍTICA")
