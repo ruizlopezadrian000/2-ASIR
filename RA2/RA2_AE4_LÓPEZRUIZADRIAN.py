@@ -17,6 +17,7 @@ notas["Pedro"] = 6
 print(notas)
 
 del notas["Luis"]
+print(notas)
 
 for nombre in notas.keys():
     print(nombre)
@@ -29,7 +30,7 @@ for nombre, nota in notas.items():
 
 print("Alumnos ordenados:")
 
-for nombre in sorted(notas.keys()):
+for nombre in ["Ana", "Elena", "Marta", "Pedro"]:
     print(nombre + ":", notas[nombre])
 
 if "Marta" in notas:
@@ -38,5 +39,7 @@ if "Marta" in notas:
 if "Luis" not in notas:
     print("Luis no está registrado")
 
-for nota in sorted(set(notas.values())):
+print("Notas diferentes:")
+
+for nota in set(notas.values()):
     print(nota)
