@@ -1,17 +1,19 @@
 <?php
-
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
-    header("Location: ejercicio4.html");
+
+    header("Location: login.php");
     exit();
+
 }
 
 if (time() - $_SESSION['ultimo_acceso'] > 120) {
 
+    session_unset();
     session_destroy();
 
-    header("Location: ejercicio4.html");
+    header("Location: login.php?expirado=1");
     exit();
 
 }
@@ -29,13 +31,15 @@ $_SESSION['ultimo_acceso'] = time();
 
 <body>
 
-    <h2>Panel privado</h2>
+    <h2>Bienvenido al panel privado</h2>
 
-    <p>Bienvenido
+    <p>Usuario:
         <?php echo $_SESSION['usuario']; ?>
     </p>
 
-    <p>Tu sesión está activa.</p>
+    <p>Sesión iniciada correctamente.</p>
+
+    <p>La sesión caducará después de 2 minutos de inactividad.</p>
 
 </body>
 

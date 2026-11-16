@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Presupuesto de Eventos</title>
+</head>
+<body>
+
+    <h1>Calculadora de Presupuesto para Eventos</h1>
+
+    <form action="presupuesto.php" method="POST">
+
+        <h3>Tipo de menú</h3>
+
+        <input type="radio" name="menu" value="15" required>
+        Básico (15€/persona)<br>
+
+        <input type="radio" name="menu" value="25">
+        Premium (25€/persona)<br>
+
+        <input type="radio" name="menu" value="40">
+        VIP (40€/persona)<br>
+
+        <h3>Espacio del evento</h3>
+
+        <select name="espacio">
+            <option value="0">Salón interior (0€)</option>
+            <option value="100">Jardín (100€)</option>
+            <option value="150">Terraza (150€)</option>
+        </select>
+
+        <h3>Extras opcionales</h3>
+
+        <input type="checkbox" name="extras[]" value="120">
+        DJ (120€)<br>
+
+        <input type="checkbox" name="extras[]" value="200">
+        Barra libre (200€)<br>
+
+        <input type="checkbox" name="extras[]" value="80">
+        Decoración floral (80€)<br>
+
+        <h3>Cantidad de invitados</h3>
+
+        <input type="number" name="invitados" min="1" required>
+
+        <br><br>
+
+        <input type="submit" value="Calcular presupuesto">
+
+    </form>
+
+</body>
+</html>
