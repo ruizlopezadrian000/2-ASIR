@@ -1,33 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrito de compra</title>
+</head>
 <body>
 
-<h1>Catálogo de productos</h1>
+    <h1>Catálogo de productos</h1>
 
-<form action="ejercicio2.php" method="POST">
+    <form action="carrito.php" method="POST">
 
-    <input type="checkbox" name="productos[]" value="Teclado">
-    Teclado
+        <input type="checkbox" name="productos[]" value="Ordenador">
+        Ordenador<br>
 
-    <br>
+        <input type="checkbox" name="productos[]" value="Teclado">
+        Teclado<br>
 
-    <input type="checkbox" name="productos[]" value="Ratón">
-    Ratón
+        <input type="checkbox" name="productos[]" value="Ratón">
+        Ratón<br>
 
-    <br>
+        <input type="checkbox" name="productos[]" value="Monitor">
+        Monitor<br>
 
-    <input type="checkbox" name="productos[]" value="Monitor">
-    Monitor
+        <input type="checkbox" name="productos[]" value="Impresora">
+        Impresora<br><br>
 
-    <br>
+        <input type="submit" value="Añadir al carrito">
 
-    <input type="checkbox" name="productos[]" value="Auriculares">
-    Auriculares
+        <button type="submit" formaction="carrito.php" name="vaciar" value="1">
+            Vaciar carrito
+        </button>
 
-    <br><br>
-
-    <input type="submit" value="Añadir al carrito">
-
-</form>
+    </form>
 
 </body>
 </html>

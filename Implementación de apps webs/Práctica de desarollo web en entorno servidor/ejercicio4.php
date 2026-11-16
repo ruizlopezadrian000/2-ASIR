@@ -1,23 +1,23 @@
 <?php
 
-session_start();
-
-define("USUARIO", "adrian");
-define("PASSWORD", "1234567890");
+define("USUARIO", "admin");
+define("PASSWORD", "1234");
 
 if ($_POST['usuario'] == USUARIO && $_POST['password'] == PASSWORD) {
 
-    $_SESSION['usuario'] = $_POST['usuario'];
+    session_start();
 
+    $_SESSION['usuario'] = $_POST['usuario'];
     $_SESSION['ultimo_acceso'] = time();
 
-    header("Location: panel.php");
+    header("Location: ejercicio4_1.php");
     exit();
 
 } else {
 
-    header("Location: login.php?error=1");
-    exit();
+    echo "Usuario o contraseña incorrectos.";
+    echo "<br><a href='ejercicio4.html'>Volver</a>";
 
 }
+
 ?>
