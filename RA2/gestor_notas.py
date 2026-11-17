@@ -1,15 +1,9 @@
-
-# Diccionario: Actividad Gestión de Calificaciones
-
-# Diccionario inicial
 notas = {
     "Ana": 8,
     "Luis": 6,
     "Marta": 9,
     "Pedro": 5
 }
-
-
 # 1. Consultar información
 print("1. Consultar información")
 
